@@ -1,79 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penguin Fashion</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="shortcut icon" href="./icons/icons8-penguin-96.png" type="image/x-icon">
+    <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <style>
-        .bebas-regular {
-            font-family: "Bebas Neue", sans-serif;
-            font-weight: 400;
-            font-style: normal;
-        }
 
-        .roboto-regular {
-            font-family: "Roboto", sans-serif;
-            font-weight: 400;
-            font-style: normal;
+    <!-- DaisyUI -->
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'color-primary': '#FABE4C',
+                        'color-secondary': '#A4BC46',
+                        'bg-color': 'rgba(250, 190, 76, 0.5)',
+                        'gray-primary': '#3E3E3E',
+                    },
+                    fontFamily: {
+                        'bebas': ['Bebas Neue', 'sans-serif'],
+                        'roboto': ['Roboto', 'sans-serif'],
+                    },
+                }
+            }
         }
-    </style>
+    </script>
 </head>
 
-<body class="roboto-regular">
-    <main>
-        <header class="bg-[#FFFBF0]">
-            <div class="w-4/5 mx-auto">
-                <nav class="flex justify-between align-middle pt-10">
-                    <div>
-                        <img src="./icons/logo.png" alt="" class="w-72">
+<body class="font-roboto space-y-10 space-y-32">
+
+    <!-- header -->
+    <header class="bg-orange-100">
+        <section class="w-11/12 md:w-[80%] 2xl:container mx-auto">
+            <!-- nav -->
+            <nav>
+                <div class="navbar bg-orange-100 px-0">
+                    <div class="flex-1">
+                        <img src="./icons/icons8-penguin-96.png" class="w-16">
+                        <a class="btn btn-ghost p-0 text-xl">
+                            <span class="text-color-secondary">Penguin</span> Fashion
+                        </a>
                     </div>
-                    <div>
-                        <ul class="flex gap-x-12">
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Product</a></li>
-                            <li><a href="">About us</a></li>
-                            <li><a href="">Contact us</a></li>
+                    <div class="navbar-center hidden lg:flex">
+                        <ul class="menu menu-horizontal px-1">
+                            <li><a class="font-medium">Home</a></li>
+                            <li><a class="font-medium">Product</a></li>
+                            <li><a class="font-medium">About Us</a></li>
+                            <li><a class="font-medium">Contact Us</a></li>
                         </ul>
                     </div>
-                </nav>
-                <div class="flex gap-44">
+                    <div class="">
+                        <div class="dropdown">
+                            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h8m-8 6h16" />
+                                </svg>
+                            </div>
+                            <ul tabindex="0"
+                                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow top-8 right-0">
+                                <li><a class="font-medium">Home</a></li>
+                                <li><a class="font-medium">Product</a></li>
+                                <li><a class="font-medium">About Us</a></li>
+                                <li><a class="font-medium">Contact Us</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- banner -->
+            <div class="hero bg-orange-100 min-h-screen">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+
                     <div>
-                        <h1>
-                            <span class="bebas-regular text-7xl text-[#FABE4C]">
-                                Be the Penguins
-                            </span>
-                            <span class="bebas-regular text-7xl text-[#363958]">
-                                <br>of Winter
-                            </span>
+                        <h1 class="lg:text-8xl text-6xl font-bold font-bebas">
+                            <span class="text-color-primary">Be the Penguins</span>
+                            <br>of Winter
                         </h1>
-                        <p class="text-[#3E3E3E]">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id ad officiis, recusandae soluta
-                            neque
-                            at libero omnis et sunt accusantium!
+                        <p class="py-6 text-gray-primary">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas debitis dicta ipsum.
                         </p>
-                        <button class="bg-[#FABE4C] py-3 px-6 rounded-lg flex gap-3 align-middle">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white"
+                        <button class="btn bg-color-secondary text-white px-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-cart-fill" viewBox="0 0 16 16">
                                 <path
                                     d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
                             </svg>
-                            <span class="text-white font-semibold">BUY NOW</span>
+                            Buy Now
                         </button>
                     </div>
-                    <div>
-                        <img src="./images/model.png" alt="">
+
+                    <div class="justify-self-end">
+                        <img src="./images/model.png" class="max-w-sm" />
                     </div>
                 </div>
             </div>
-        </header>
-    </main>
+        </section>
+    </header>
+
+    <!-- main -->
+    <main></main>
+
+    <!-- footer -->
+    <footer></footer>
+
 </body>
 
 </html>
